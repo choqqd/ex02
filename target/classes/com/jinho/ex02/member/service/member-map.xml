@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jinho.ex02.member.service.member-map">
+	<select id="memberListSelect" resultType="com.jinho.ex02.member.vo.MemberVO">
+		select * from member
+	</select>
+	
+	<select id="memberSelect" parameterType="com.jinho.ex02.member.vo.MemberVO" resultType="com.jinho.ex02.member.vo.MemberVO">
+		select * from member where id = #{id}
+	</select>
+	
+	<insert id="memberInsert" parameterType="com.jinho.ex02.member.vo.MemberVO">
+		insert into member values(#{id},#{password},#{name},#{tel})
+	</insert>
+</mapper>
